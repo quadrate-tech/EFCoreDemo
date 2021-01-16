@@ -12,6 +12,6 @@ namespace EFCoreDemo
 
         Employee Update(Employee employee);
 
-        void Delete(int id);
+        void Delete(Employee employee);
     }
 }

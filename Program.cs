@@ -4,11 +4,35 @@ namespace EFCoreDemo
 {
     class Program
     {
-        static void Main(string[] args)
+        public static EmployeeContext empContext = new EmployeeContext();
+        public static void Main(string[] args)
         {
-            var provider = new EmployeeProvider(new EmployeeContext());
-            //var employee = provider.Get(1);
-            Console.WriteLine("Welcome");
+            //Console.WriteLine("Welcome");
+
+            //var repo = new EmployeeRepo(empContext);
+            //repo.Create("Fazrin", "Farook", "Address", "123456789", "98765431");
         }
+
+        public static Employee Create(string firstName, string lastName, string address, string homePhone, string cellPhone)
+        {
+            var data = empContext.Add(new Employee { FirstName = firstName, LastName = lastName, Address = address, HomePhone = homePhone, Mobile = cellPhone });
+            empContext.SaveChanges();
+            return data.Entity;
+        }
+
+        public static void Delete(Employee emp)
+        {
+            empContext.Remove(emp);
+            empContext.SaveChanges();
+        }
+
+
+        public static Employee Update(Employee employee)
+        {
+            var data = empContext.Update(employee);
+            empContext.SaveChanges();
+            return data.Entity;
+        }
+
     }
 }
