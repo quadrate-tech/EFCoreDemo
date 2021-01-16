@@ -11,7 +11,7 @@ namespace EFCoreDemo
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseSqlServer(@"Data Source=DESKTOP-02RK9HN\QUADRATESQL;Initial Catalog=project;Integrated Security=True");
+            optionBuilder.UseSqlServer(@"Data Source=DESKTOP-02RK9HN\QUADRATESQL;Initial Catalog=EmployeeDB;Integrated Security=True");
         }
     }
 }

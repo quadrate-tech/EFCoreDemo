@@ -6,8 +6,8 @@ namespace EFCoreDemo
     {
         static void Main(string[] args)
         {
-            var provider = new EmployeeProvider(new EmployeeContext(""));
-            var employee = provider.Get(1);
+            var provider = new EmployeeProvider(new EmployeeContext());
+            //var employee = provider.Get(1);
             Console.WriteLine("Welcome");
         }
     }
